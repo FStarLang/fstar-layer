@@ -33,7 +33,7 @@
   '(
     (fstar-mode :location (recipe
                            :fetcher git
-                           :url "file:///home/kyodralliam/Prog/Fstar/fstar-mode.el/"))
+                           :url "https://github.com/FStarLang/fstar-mode.el.git"))
     ;; (fstar-mode :location (recipe
     ;;                        :fetcher github
     ;;                        :repo "FStarLang/fstar-mode.el"))
