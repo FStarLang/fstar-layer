@@ -1,6 +1,5 @@
 #+TITLE: fstar layer
 
-# The maximum height of the logo should be 200 pixels.
 [[./img/fstar.png]]
 
 # TOC links should be GitHub style anchors.
@@ -10,8 +9,7 @@
  - [[#key-bindings][Key bindings]]
 
 * Description
-This layer does wonderful things:
-  - thing01
+This layer is a wrapper around fstar-mode.
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
@@ -20,9 +18,15 @@ file.
 
 * Key bindings
 
-| Key Binding | Description    |
-|-------------+----------------|
-| ~SPC x x x~ | Does thing01   |
+| Key Binding | Description                                  |
+|-------------+----------------------------------------------|
+| ~SPC m n~   | eval next chunk of code                      |
+| ~SPC m u~   | retract last chunk of code                   |
+| ~SPC m p~   | retract last chunk of code                   |
+| ~SPC m i~   | eval/retract to point                        |
+| ~SPC m l~   | eval/retract to point in lax mode            |
+| ~SPC m x~   | kill background z3 process (stop evaluation) |
+
 # Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
 # Examples:
 # [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
