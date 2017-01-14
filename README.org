@@ -9,7 +9,7 @@
  - [[#key-bindings][Key bindings]]
 
 * Description
-This layer is a wrapper around fstar-mode.
+This layer is just a wrapper around [[https://github.com/FStarLang/fstar-mode.el][fstar-mode]].
 
 * Install
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
