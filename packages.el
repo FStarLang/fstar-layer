@@ -77,6 +77,7 @@ Each entry is either:
         "i" 'fstar-subp-advance-or-retract-to-point
         "l" 'fstar-subp-advance-or-retract-to-point-lax
         "x" 'fstar-subp-kill-one-or-many
+        "j" 'fstar-jump-to-definition
         )
       )
     ))
