@@ -31,12 +31,8 @@
 
 (defconst fstar-packages
   '(
-    (fstar-mode :location (recipe
-                           :fetcher git
-                           :url "https://github.com/FStarLang/fstar-mode.el.git"))
-    ;; (fstar-mode :location (recipe
-    ;;                        :fetcher github
-    ;;                        :repo "FStarLang/fstar-mode.el"))
+    (fstar-mode :location (recipe :fetcher github
+                                  :repo "FStarLang/fstar-mode.el"))
     )
   "The list of Lisp packages required by the fstar layer.
 
@@ -68,16 +64,55 @@ Each entry is either:
 (defun fstar/init-fstar-mode ()
   (use-package fstar-mode
     :defer t
+    :init
+    (progn
+      (company-quickhelp-mode 1))
     :config
     (progn
+      (dolist (prefix '(("mh" . "fstar/help")
+                        ("mj" . "fstar/jump")))
+        (spacemacs/declare-prefix-for-mode
+          'fstar-mode
+          (car prefix) (cdr prefix)))
       (spacemacs/set-leader-keys-for-major-mode 'fstar-mode
         "n" 'fstar-subp-advance-next
         "u" 'fstar-subp-retract-last
-        "p" 'fstar-subp-retract-last
         "i" 'fstar-subp-advance-or-retract-to-point
         "l" 'fstar-subp-advance-or-retract-to-point-lax
         "x" 'fstar-subp-kill-one-or-many
-        "j" 'fstar-jump-to-definition
+        "b" 'fstar-subp-advance-to-point-max-lax
+        "r" 'fstar-subp-reload-to-point
+        "k" 'fstar-subp-kill-z3
+
+        ;; Moving around
+        "." 'fstar-jump-to-definition
+        "'" 'fstar-jump-to-related-error
+        "jj" 'fstar-jump-to-definition
+        "jf" 'fstar-jump-to-definition-other-frame
+        "jw" 'fstar-jump-to-definition-other-window
+        "je" 'fstar-jump-to-related-error
+        "jF" 'fstar-jump-to-related-error-other-frame
+        "jW" 'fstar-jump-to-related-error-other-window
+        "jd" 'fstar-visit-dependency
+        "ja" 'fstar-visit-interface-or-implementation
+        "ju" 'fstar-subp-goto-beginning-of-unprocessed
+
+        ;; Help !!!
+        "hy" 'fstar-copy-help-at-point
+        "hw" 'fstar-browse-wiki
+        "hW" 'fstar-browse-wiki-in-browser
+        "ho" 'fstar-list-options
+        "hp" 'fstar-quick-peek
+
+        ;; Other queries
+        "o"  'fstar-outline
+        "c"  'fstar-insert-match-dwim
+        "e"  'fstar-eval
+        "E"  'fstar-eval-custom
+        "s"  'fstar-search
+        "d"  'fstar-doc
+        "p"  'fstar-print
+        "q"  'fstar-quit-windows
         )
       )
     ))
