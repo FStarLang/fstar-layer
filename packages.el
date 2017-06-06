@@ -61,6 +61,33 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun comment-or-uncomment-region-or-line ()
+  "Comments or uncomments the region or the current line if there's no active region."
+  (interactive)
+  (let (beg end)
+    (if (region-active-p)
+        (setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-or-uncomment-region beg end)))
+
+(defun spacemacs/fstar-comment-or-uncomment-big ()
+  (interactive)
+  (let ((comment-start "(***"))
+    (comment-or-uncomment-region-or-line)
+    ))
+
+(defun spacemacs/fstar-comment-or-uncomment-medium ()
+  (interactive)
+  (let ((comment-start "(*+"))
+    (comment-or-uncomment-region-or-line)
+    ))
+
+(defun spacemacs/fstar-comment-or-uncomment-small ()
+  (interactive)
+  (let ((comment-start "(*+"))
+    (comment-or-uncomment-region-or-line)
+    ))
+
 (defun fstar/init-fstar-mode ()
   (use-package fstar-mode
     :defer t
@@ -103,6 +130,11 @@ Each entry is either:
         "hW" 'fstar-browse-wiki-in-browser
         "ho" 'fstar-list-options
         "hp" 'fstar-quick-peek
+
+        ;; Special comments
+        ";1" 'spacemacs/fstar-comment-or-uncomment-big
+        ";2" 'spacemacs/fstar-comment-or-uncomment-medium
+        ";3" 'spacemacs/fstar-comment-or-uncomment-small
 
         ;; Other queries
         "o"  'fstar-outline
