@@ -107,7 +107,6 @@ Each entry is either:
         "hp" 'fstar-quick-peek
 
         ;; Other queries
-        "o"  'fstar-outline
         "c"  'fstar-insert-match-dwim
         "e"  'fstar-eval
         "E"  'fstar-eval-custom
@@ -115,6 +114,8 @@ Each entry is either:
         "d"  'fstar-doc
         "p"  'fstar-print
         "q"  'fstar-quit-windows
+        ;; "o" is reserved by convention :'(
+        "P"  'fstar-outline
         )
       )
     ))
