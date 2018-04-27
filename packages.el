@@ -74,6 +74,7 @@ Each entry is either:
         (spacemacs/declare-prefix-for-mode
           'fstar-mode
           (car prefix) (cdr prefix)))
+      (add-to-list 'spacemacs-indent-sensitive-modes 'fstar-mode)
       (add-to-list 'spacemacs-jump-handlers-fstar-mode '(fstar-jump-to-definition :async t))
       (spacemacs/set-leader-keys-for-major-mode 'fstar-mode
         "n" 'fstar-subp-advance-next
