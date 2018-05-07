@@ -4,17 +4,19 @@
 
 # TOC links should be GitHub style anchors.
 * Table of Contents                                        :TOC_4_gh:noexport:
- - [[#description][Description]]
- - [[#install][Install]]
- - [[#key-bindings][Key bindings]]
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#key-bindings][Key bindings]]
 
 * Description
 This layer is just a wrapper around [[https://github.com/FStarLang/fstar-mode.el][fstar-mode]].
 
 * Install
-To use this configuration layer, add it to your =~/.spacemacs=. You will need to
-add =fstar= to the existing =dotspacemacs-configuration-layers= list in this
-file.
+This layer is not integrated in the main spacemacs layer repository and probably
+won't be integrated since it is just a superficial wrapper. To use it you should
+place the =fstar-layer= directory in =~/.emacs.d/private/= and add it to your
+=~/.spacemacs=. You will need to add =fstar= to the existing
+=dotspacemacs-configuration-layers= list in this file.
 
 * Key bindings
 
@@ -22,10 +24,44 @@ file.
 |-------------+----------------------------------------------|
 | ~SPC m n~   | eval next chunk of code                      |
 | ~SPC m u~   | retract last chunk of code                   |
-| ~SPC m p~   | retract last chunk of code                   |
 | ~SPC m i~   | eval/retract to point                        |
 | ~SPC m l~   | eval/retract to point in lax mode            |
 | ~SPC m x~   | kill background z3 process (stop evaluation) |
+| ~SPC m b~   | eval the buffer in lax mode                  |
+| ~SPC m r~   | reload and eval the buffer to the point      |
+| ~SPC m k~   | kill the underlying z3 process               |
+|-------------+----------------------------------------------|
+|             | Moving around                                |
+|-------------+----------------------------------------------|
+| ~SPC m .~   | jump to definition                           |
+| ~SPC m '~   | jump to related error                        |
+| ~SPC m j j~ | jump to definition                           |
+| ~SPC m j f~ | jump to definition in other frame            |
+| ~SPC m j w~ | jump to definition in other window           |
+| ~SPC m j e~ | jump to related error                        |
+| ~SPC m j F~ | jump to related error in other frame         |
+| ~SPC m j W~ | jump to related error in other window        |
+| ~SPC m j d~ | visit dependency                             |
+| ~SPC m j a~ | toggle between interface and implementation  |
+|-------------+----------------------------------------------|
+|             | Help !!!                                     |
+|-------------+----------------------------------------------|
+| ~SPC m h y~ | yank help data at point                      |
+| ~SPC m h w~ | browse fstar wiki                            |
+| ~SPC m h W~ | browse fstar wiki in browser                 |
+| ~SPC m h o~ | list fstar options                           |
+| ~SPC m h p~ | toggle showing type at point                 |
+|-------------+----------------------------------------------|
+|             | Others                                       |
+|-------------+----------------------------------------------|
+| ~SPC m c~   | insert match                                 |
+| ~SPC m e~   | evaluates expression                         |
+| ~SPC m E~   | evaluates expression with custom reduction   |
+| ~SPC m s~   | search                                       |
+| ~SPC m d~   | show documentation                           |
+| ~SPC m p~   | print the fstar term                         |
+| ~SPC m q~   | quit all satellite fstar windows             |
+| ~SPC m P~   | print an outline of the current file         |
 
 # Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
 # Examples:
