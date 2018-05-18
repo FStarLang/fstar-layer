@@ -14,8 +14,8 @@ This layer is just a wrapper around [[https://github.com/FStarLang/fstar-mode.el
 * Install
 This layer is not integrated in the main spacemacs layer repository and probably
 won't be integrated since it is just a superficial wrapper. To use it you should
-place the =fstar-layer= directory in =~/.emacs.d/private/= and add it to your
-=~/.spacemacs=. You will need to add =fstar= to the existing
+rename the =fstar-layer= directory to =fstar=, place it in =~/.emacs.d/private/=,
+and add it to your =~/.spacemacs=. You will need to add =fstar= to the existing
 =dotspacemacs-configuration-layers= list in this file.
 
 * Key bindings
