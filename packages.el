@@ -31,8 +31,7 @@
 
 (defconst fstar-packages
   '(
-    (fstar-mode :location (recipe :fetcher github
-                                  :repo "FStarLang/fstar-mode.el"))
+    (fstar-mode)
     )
   "The list of Lisp packages required by the fstar layer.
 
